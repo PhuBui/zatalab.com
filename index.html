@@ -45,13 +45,16 @@ h2{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 12px}
 .product{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;margin-bottom:28px}
 .product h3{font-size:1.6rem;letter-spacing:-.02em}
 .product>div{max-width:680px}
-.product .logo-img{width:64px;height:64px;border-radius:16px;display:block;margin-bottom:14px}
+.title-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:10px}
+.title-row h3{margin:0}
+.title-row .tag{margin:0}
+.product .logo-img{width:52px;height:52px;border-radius:13px;flex:none}
 .product p{font-size:1.05rem}
 .subhead{font-size:1.1rem;margin:0 0 16px}
 .feature h3{font-size:1rem}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-@media(max-width:640px){nav ul{display:none}.btn+.btn{margin:10px 0 0}.lang{margin-left:auto}}
+@media(max-width:640px){.title-row h3{font-size:1.25rem;flex:1 1 0;min-width:0}.title-row .tag{order:3}nav ul{display:none}.btn+.btn{margin:10px 0 0}.lang{margin-left:auto}}
 </style>
 </head>
 <body>
@@ -87,9 +90,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
       <div class="card product">
         <div>
-          <img class="logo-img" src="assets/utable-logo.svg" alt="uTable logo" width="64" height="64">
-          <span class="tag" data-vi="Mới">New</span>
-          <h3 data-vi="uTable: gọi món tại bàn, đơn giản">uTable: table ordering made simple</h3>
+          <div class="title-row">
+            <img class="logo-img" src="assets/utable-logo.svg" alt="uTable logo" width="52" height="52">
+            <h3 data-vi="uTable: gọi món tại bàn, đơn giản">uTable: table ordering made simple</h3>
+            <span class="tag" data-vi="Mới">New</span>
+          </div>
           <p data-vi="Khách quét mã QR tại bàn, xem thực đơn có hình ảnh và gọi món ngay trên điện thoại. Không cần cài ứng dụng, không phải chờ gọi nhân viên. Bếp thấy đơn ngay khi khách đặt, và nhân viên tính tiền khi khách muốn thanh toán.">Guests scan a QR code at their table, browse your menu with photos and order from their phone. No app to install, no waiting for a waiter. Your kitchen sees each order the moment it is placed, and your staff close the bill when guests are ready to pay.</p>
         </div>
         <a class="btn primary" href="https://utable.zatalab.com/" data-vi="Dùng thử uTable →">Try uTable →</a>
