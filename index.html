@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zatalab — Building products people use</title>
-<meta name="description" content="Zatalab is a product studio founded by Phu Bui. Our first product is uTable.">
+<meta name="description" content="Zatalab is a product studio founded by Phu Bui. Our first product, uTable, makes table ordering simple for restaurants and cafés.">
 <meta property="og:title" content="Zatalab">
-<meta property="og:description" content="A product studio building software people love. First product: uTable.">
+<meta property="og:description" content="A product studio building software people love. First product: uTable, table ordering made simple.">
 <meta property="og:url" content="https://zatalab.com">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M9 9h14l-10 14h10' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
@@ -18,12 +18,15 @@ body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-appl
 a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
 .logo span{color:var(--accent)}
-nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+nav ul{display:flex;gap:24px;list-style:none;margin:0 0 0 auto;padding:0}
 nav ul a{text-decoration:none;color:var(--muted);font-size:.95rem}
 nav ul a:hover{color:var(--fg)}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{font:inherit;font-size:.8rem;font-weight:600;padding:4px 10px;border:0;background:none;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
 .hero{padding:96px 0 72px;text-align:center}
 .hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 20px}
 .hero h1 em{font-style:normal;color:var(--accent)}
@@ -39,10 +42,15 @@ h2{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 12px}
 .card h3{margin:0 0 8px}
 .card p{margin:0;color:var(--muted)}
 .tag{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--accent);color:var(--accent-fg);margin-bottom:12px}
-.card.product{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.product{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;margin-bottom:28px}
+.product h3{font-size:1.6rem;letter-spacing:-.02em}
+.product>div{max-width:680px}
+.product p{font-size:1.05rem}
+.subhead{font-size:1.1rem;margin:0 0 16px}
+.feature h3{font-size:1rem}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
-@media(max-width:560px){nav ul{gap:14px}.btn+.btn{margin:10px 0 0}}
+@media(max-width:640px){nav ul{display:none}.btn+.btn{margin:10px 0 0}.lang{margin-left:auto}}
 </style>
 </head>
 <body>
@@ -51,55 +59,70 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
     <nav>
       <a class="logo" href="#">Zata<span>lab</span></a>
       <ul>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#products" data-vi="Sản phẩm">Products</a></li>
+        <li><a href="#about" data-vi="Giới thiệu">About</a></li>
+        <li><a href="#contact" data-vi="Liên hệ">Contact</a></li>
       </ul>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="wrap hero">
-    <h1>We build software<br>people <em>actually use</em>.</h1>
-    <p>Zatalab is a product studio founded by Phu Bui. Small today, building for the long term.</p>
-    <a class="btn primary" href="https://utable.zatalab.com">Try uTable</a>
-    <a class="btn" href="#about">About Zatalab</a>
+    <h1 data-vi="Chúng tôi làm phần mềm<br>người dùng <em>thực sự cần</em>.">We build software<br>people <em>actually use</em>.</h1>
+    <p data-vi="Zatalab là studio sản phẩm do Phu Bui sáng lập. Hôm nay còn nhỏ, nhưng xây dựng cho chặng đường dài.">Zatalab is a product studio founded by Phu Bui. Small today, building for the long term.</p>
+    <a class="btn primary" href="https://utable.zatalab.com/" data-vi="Dùng thử uTable">Try uTable</a>
+    <a class="btn" href="#about" data-vi="Về Zatalab">About Zatalab</a>
   </div>
 
   <section id="products">
     <div class="wrap">
-      <h2>Products</h2>
-      <p class="lead">Focused tools that do one thing well. More on the way.</p>
-      <div class="grid">
-        <div class="card product">
-          <div>
-            <span class="tag">New</span>
-            <h3>uTable</h3>
-            <p>Our first product, at utable.zatalab.com.</p>
-          </div>
-          <a class="btn primary" href="https://utable.zatalab.com">Open uTable →</a>
+      <h2 data-vi="Sản phẩm">Products</h2>
+      <p class="lead" data-vi="Những công cụ tập trung, làm một việc và làm thật tốt. Còn nhiều sản phẩm nữa đang đến.">Focused tools that do one thing well. More on the way.</p>
+
+      <div class="card product">
+        <div>
+          <span class="tag" data-vi="Mới">New</span>
+          <h3 data-vi="uTable: gọi món tại bàn, đơn giản">uTable: table ordering made simple</h3>
+          <p data-vi="Khách quét mã QR tại bàn, xem thực đơn có hình ảnh và gọi món ngay trên điện thoại. Không cần cài ứng dụng, không phải chờ gọi nhân viên. Bếp thấy đơn ngay khi khách đặt, và nhân viên tính tiền khi khách muốn thanh toán.">Guests scan a QR code at their table, browse your menu with photos and order from their phone. No app to install, no waiting for a waiter. Your kitchen sees each order the moment it is placed, and your staff close the bill when guests are ready to pay.</p>
         </div>
+        <a class="btn primary" href="https://utable.zatalab.com/" data-vi="Dùng thử uTable →">Try uTable →</a>
+      </div>
+
+      <h3 class="subhead" data-vi="Bạn nhận được">What you get</h3>
+      <div class="grid">
+        <div class="card feature"><h3 data-vi="Gọi món bằng QR ở mỗi bàn">QR ordering at every table</h3><p data-vi="Mỗi bàn một mã, kèm mã đặt món có thời hạn để an toàn.">One code per table, with a secure order pass that expires.</p></div>
+        <div class="card feature"><h3 data-vi="Thực đơn của bạn, hình ảnh của bạn">Your menu, your photos</h3><p data-vi="Danh mục, giá, ảnh món, theo đơn vị tiền tệ của quán.">Categories, prices, images, in your own currency.</p></div>
+        <div class="card feature"><h3 data-vi="Quy trình bếp rõ ràng">A clear kitchen flow</h3><p data-vi="Mới, đang làm, đã phục vụ.">New, preparing, served.</p></div>
+        <div class="card feature"><h3 data-vi="Một hóa đơn cho mỗi bàn">One bill per table</h3><p data-vi="Các đơn tự cộng dồn, thuế và giảm giá hiện thành từng dòng riêng, thanh toán tiền mặt hoặc chuyển khoản (kèm mã QR thanh toán của quán).">Orders add up automatically, with tax and discounts as separate lines, and cash or bank-transfer payment (with your payment QR).</p></div>
+        <div class="card feature"><h3 data-vi="Đội ngũ của bạn, quyền do bạn đặt">Your team, your rules</h3><p data-vi="Tài khoản nhân viên có vai trò và phân quyền cho từng quán.">Staff accounts with roles and permissions per shop.</p></div>
+        <div class="card feature"><h3 data-vi="Đặt bàn trước">Table bookings</h3><p data-vi="Khách đặt bàn trước qua một trang công khai.">Guests book from a public page.</p></div>
+        <div class="card feature"><h3 data-vi="Báo cáo và xuất dữ liệu">Reports and exports</h3><p data-vi="Doanh thu tính từ hóa đơn đã thanh toán, xuất CSV.">Revenue from paid bills, plus CSV export.</p></div>
+        <div class="card feature"><h3 data-vi="Song ngữ Anh – Việt">English and Vietnamese</h3><p data-vi="Dùng tốt trên máy tính bảng và điện thoại.">Built for tablets and phones.</p></div>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap">
-      <h2>About</h2>
-      <p class="lead">Zatalab started as a one-person lab. The goal is to grow it into a company that ships great products.</p>
+      <h2 data-vi="Giới thiệu">About</h2>
+      <p class="lead" data-vi="Zatalab bắt đầu như một phòng lab một người. Mục tiêu là phát triển thành một công ty tạo ra những sản phẩm tuyệt vời.">Zatalab started as a one-person lab. The goal is to grow it into a company that ships great products.</p>
       <div class="grid">
-        <div class="card"><h3>Craft</h3><p>Simple, fast, well-made software with attention to detail.</p></div>
-        <div class="card"><h3>Focus</h3><p>Solve real problems for real people, one product at a time.</p></div>
-        <div class="card"><h3>Growth</h3><p>Built to scale: from a solo founder to a full team.</p></div>
+        <div class="card"><h3 data-vi="Tinh tế">Craft</h3><p data-vi="Phần mềm đơn giản, nhanh, làm kỹ từng chi tiết.">Simple, fast, well-made software with attention to detail.</p></div>
+        <div class="card"><h3 data-vi="Tập trung">Focus</h3><p data-vi="Giải quyết vấn đề thật cho người thật, từng sản phẩm một.">Solve real problems for real people, one product at a time.</p></div>
+        <div class="card"><h3 data-vi="Phát triển">Growth</h3><p data-vi="Xây để mở rộng: từ một người sáng lập đến cả một đội ngũ.">Built to scale: from a solo founder to a full team.</p></div>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="wrap">
-      <h2>Contact</h2>
-      <p class="lead">Questions, partnerships, or want to join us later? Get in touch.</p>
+      <h2 data-vi="Liên hệ">Contact</h2>
+      <p class="lead" data-vi="Có câu hỏi, muốn hợp tác, hoặc muốn tham gia cùng chúng tôi sau này? Hãy liên hệ.">Questions, partnerships, or want to join us later? Get in touch.</p>
       <a class="btn primary" href="mailto:phubui2702@gmail.com">phubui2702@gmail.com</a>
     </div>
   </section>
@@ -107,10 +130,37 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
 
 <footer>
   <div class="wrap">
-    <span>© <span id="y">2026</span> Zatalab. All rights reserved.</span>
-    <span>Founded by Phu Bui</span>
+    <span>© <span id="y">2026</span> Zatalab. <span data-vi="Bảo lưu mọi quyền.">All rights reserved.</span></span>
+    <span data-vi="Sáng lập bởi Phu Bui">Founded by Phu Bui</span>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+(function () {
+  document.getElementById('y').textContent = new Date().getFullYear();
+  var nodes = document.querySelectorAll('[data-vi]');
+  nodes.forEach(function (el) { el.setAttribute('data-en', el.innerHTML); });
+  var meta = {
+    en: { title: document.title, desc: document.querySelector('meta[name=description]').content },
+    vi: { title: 'Zatalab — Xây dựng sản phẩm người dùng cần', desc: 'Zatalab là studio sản phẩm do Phu Bui sáng lập. Sản phẩm đầu tiên, uTable, giúp việc gọi món tại bàn trở nên đơn giản cho nhà hàng và quán cà phê.' }
+  };
+  function setLang(lang) {
+    nodes.forEach(function (el) { el.innerHTML = el.getAttribute('data-' + lang); });
+    document.documentElement.lang = lang;
+    document.title = meta[lang].title;
+    document.querySelector('meta[name=description]').content = meta[lang].desc;
+    document.querySelectorAll('.lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.lang === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.lang); });
+  });
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  var lang = saved || ((navigator.language || '').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en');
+  if (lang === 'vi') setLang('vi');
+})();
+</script>
 </body>
 </html>
