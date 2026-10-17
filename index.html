@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zatalab — Building products people use</title>
+<meta name="description" content="Zatalab is a product studio founded by Phu Bui. Our first product, Utable, is coming soon.">
+<meta property="og:title" content="Zatalab">
+<meta property="og:description" content="A product studio building software people love. First product: Utable.">
+<meta property="og:url" content="https://zatalab.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M9 9h14l-10 14h10' fill='none' stroke='white' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#fff;--fg:#0f172a;--muted:#64748b;--line:#e2e8f0;--card:#f8fafc;--accent:#4f46e5;--accent-fg:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1020;--fg:#e8ecf5;--muted:#94a3b8;--line:#1e293b;--card:#111832;--accent:#818cf8;--accent-fg:#0b1020}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav ul a:hover{color:var(--fg)}
+.hero{padding:96px 0 72px;text-align:center}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 20px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{max-width:600px;margin:0 auto 32px;color:var(--muted);font-size:1.15rem}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line)}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.btn+.btn{margin-left:10px}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 12px}
+.lead{color:var(--muted);max-width:640px;margin:0 0 32px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{margin:0 0 8px}
+.card p{margin:0;color:var(--muted)}
+.tag{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--accent);color:var(--accent-fg);margin-bottom:12px}
+.card.product{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+@media(max-width:560px){nav ul{gap:14px}.btn+.btn{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">Zata<span>lab</span></a>
+      <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <h1>We build software<br>people <em>actually use</em>.</h1>
+    <p>Zatalab is a product studio founded by Phu Bui. Small today, building for the long term.</p>
+    <a class="btn primary" href="https://utable.zatalab.com">Try Utable</a>
+    <a class="btn" href="#about">About Zatalab</a>
+  </div>
+
+  <section id="products">
+    <div class="wrap">
+      <h2>Products</h2>
+      <p class="lead">Focused tools that do one thing well. More on the way.</p>
+      <div class="grid">
+        <div class="card product">
+          <div>
+            <span class="tag">New</span>
+            <h3>Utable</h3>
+            <p>Our first product. Available now at utable.zatalab.com.</p>
+          </div>
+          <a class="btn primary" href="https://utable.zatalab.com">Open Utable →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <p class="lead">Zatalab started as a one-person lab. The goal is to grow it into a company that ships great products.</p>
+      <div class="grid">
+        <div class="card"><h3>Craft</h3><p>Simple, fast, well-made software with attention to detail.</p></div>
+        <div class="card"><h3>Focus</h3><p>Solve real problems for real people, one product at a time.</p></div>
+        <div class="card"><h3>Growth</h3><p>Built to scale: from a solo founder to a full team.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="lead">Questions, partnerships, or want to join us later? Get in touch.</p>
+      <a class="btn primary" href="mailto:phubui2702@gmail.com">phubui2702@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="y">2026</span> Zatalab. All rights reserved.</span>
+    <span>Founded by Phu Bui</span>
+  </div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
